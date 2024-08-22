@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender System</title>
+    <!-- Fav Icon -->
+    <link rel="icon" type="image/x-icon" href="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEwL3JtNTM1LWJvb2stMDJhXzEucG5n.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container fade-in">
+        <div class="header">
+            <h1>Book Recommender System</h1>
+            <h2>Made By Emon Hasan</h2>
+        </div>
+        <form method="POST" class="fade-in">
+            <div class="form-group">
+                <label for="book_name">Select a book:</label>
+                <select name="book_name" id="book_name" class="form-control">
+                    {% for book in book_names %}
+                    <option value="{{ book }}" {% if book == selected_book %}selected{% endif %}>{{ book }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Show Recommendation</button>
+        </form>
+
+        {% if recommendations %}
+            <div class="container mt-4 fade-in">
+                {% for i in range(0, recommendations|length, 4) %}
+                    <div class="row">
+                        {% for j in range(i, i+4) %}
+                            {% if j < recommendations|length %}
+                                    <div class="col-md-2 book">
+                                        <p>{{ recommendations[j] }}</p>
+                                        <img src="{{ posters[j] }}" alt="{{ recommendations[j] }} cover">
+                                    </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 All rights reserved | developed by <a href="https://github.com/Md-Emon-Hasan" target="_blank">Md Emon Hasan</a></p>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

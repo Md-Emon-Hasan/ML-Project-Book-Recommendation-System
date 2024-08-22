@@ -1,0 +1,149 @@
+body {
+    background: url('https://images.pexels.com/photos/768125/pexels-photo-768125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
+    background-size: cover;
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #f8f9fa;
+}
+
+.form-group label {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #f8f9fa;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #f8f9fa;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #007bff;
+    color: #000000;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004080;
+}
+
+.book {
+    margin: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    height: 350px;
+}
+
+.book:hover {
+    transform: scale(1.05);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
+}
+
+.book img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.book img:hover {
+    transform: scale(1.1);
+}
+
+.book p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    color: #333;
+    font-weight: 600;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #f8f9fa;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    border-top: 1px solid #f1f1f1;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
+    color: #00bb64;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 1s ease-out;
+}
+
+.row {
+    margin: 0 -10px;
+}
+
+.col-md-2 {
+    padding: 10px;
+    flex: 0 0 20%;
+    max-width: 20%;
+}
