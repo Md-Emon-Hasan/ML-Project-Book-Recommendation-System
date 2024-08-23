@@ -37,10 +37,10 @@
                     <div class="row">
                         {% for j in range(i, i+4) %}
                             {% if j < recommendations|length %}
-                                    <div class="col-md-2 book">
-                                        <p>{{ recommendations[j] }}</p>
-                                        <img src="{{ posters[j] }}" alt="{{ recommendations[j] }} cover">
-                                    </div>
+                                <div class="col-md-2 book">
+                                    <p>{{ recommendations[j] }}</p>
+                                    <img src="{{ posters[j] }}" alt="{{ recommendations[j] }} cover">
+                                </div>
                             {% endif %}
                         {% endfor %}
                     </div>
