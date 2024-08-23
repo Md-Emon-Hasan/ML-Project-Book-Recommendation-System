@@ -54,6 +54,7 @@ def recommend_book(book_name):
 def index():
     recommendations = []
     posters = []
+    selected_book = None  # Initialize selected_book
 
     if request.method == 'POST':
         selected_book = request.form.get('book_name')
@@ -63,4 +64,4 @@ def index():
     return render_template('index.html', book_names=book_names, recommendations=recommendations, posters=posters, zip=zip, selected_book=selected_book)
 
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0',port=5000)
+    app.run(debug=True, host='0.0.0.0', port=5000)
