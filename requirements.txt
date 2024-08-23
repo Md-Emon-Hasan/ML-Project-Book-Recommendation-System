@@ -5,4 +5,4 @@ gunicorn
 pandas
 
 # local packages
--e .
+# -e .
